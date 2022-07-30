@@ -1,0 +1,221 @@
+                                                                   Assignment - 10 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+                                                                                    Functions in C Language
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Write a function to calculate the area of a circle. (TSRS)
+
+Ans.  #include<iostream>
+using namespace std;
+float area(float);
+int main() {
+	float radius;
+	cout<<"Enter radius of circle: ";
+	cin>>radius;
+	cout<<"Area of the circle: "<<area(radius);
+	return 0;
+}
+float area(float radius) {
+	float area;
+	area=3.14*(radius*radius);
+	return area;
+}
+
+2. Write a function to calculate simple interest. (TSRS)
+
+Ans. #include<iostream>
+using namespace std;
+int si(int,float,float);
+int main() {
+	int p_amount;
+	float time,rate;
+	cout<<"Enter Principal amount: ";
+	cin>>p_amount;
+	cout<<"Enter Rate: ";
+	cin>>rate;
+	cout<<"Enter Time: ";
+	cin>>time;
+	cout<<"Simple Interest: "<<si(p_amount,rate,time);
+}
+int si(int p_amount,float rate,float time) {
+	int simpleinterest=p_amount*rate*time/100;
+	return simpleinterest;
+}
+
+3. Write a function to check whether a given number is even or odd. Return 1 if the
+number is even, otherwise return 0. (TSRS)
+
+Ans.#include<iostream>
+using namespace std;
+int odd_even_check(int number) {
+	if(number%2==0)return 1;
+	else return 0;
+}
+int main() {
+	int number;
+	cout<<"Enter Number: ";
+	cin>>number;
+	int value=odd_even_check(number);
+	cout<<value;
+}
+
+4. Write a function to print first N natural numbers (TSRN)
+
+Ans.#include<iostream>
+using namespace std;
+void natural_number(int n) {
+	for(int i=1; i<=n; i++) {
+		cout<<i<<endl;
+	}
+}
+int main() {
+	int n;
+	cin>>n;
+	natural_number(n);
+	return 0;
+}
+
+5. Write a function to print first N odd natural numbers. (TSRN)
+
+Ans.#include<iostream>
+using namespace std;
+void odd_number(int n) {
+	for(int i=1; i<=n*2; i+=2) {
+		cout<<i<<endl;
+	}
+}
+int main() {
+	int n;
+	cin>>n;
+	odd_number(n);
+	return 0;
+}
+
+6. Write a function to calculate the factorial of a number. (TSRS)
+
+Ans.#include<iostream>
+using namespace std;
+int factorial(int n) {
+	int fact=1;
+
+	for(int i=n; i>=1; i--) {
+		fact=fact*i;
+	}
+	return fact;
+}
+int main() {
+	int n;
+	cin>>n;
+	cout<<"Fatorial of given number: "<<factorial(n);
+	return 0;
+}
+
+7. Write a function to calculate the number of combinations one can make from n items
+and r selected at a time. (TSRS)
+
+Ans.#include<iostream>
+using namespace std;
+int fact(int i) {
+	int fact=1;
+	for(int j=i; j>=1; j--) {
+		fact=fact*j;
+
+	}
+	return fact;
+}
+int combination(int n,int r) {
+	int comb=fact(n)/(fact(r)*fact(n-r));
+	return comb;
+}
+
+int main() {
+	int n,r;
+	cout<<"Enter total number of items: ";
+	cin>>n;
+	cout<<"enter no of selected items: ";
+	cin>>r;
+	cout<<"Total number of combinations: "<<combination(n,r);
+}
+
+
+8. Write a function to calculate the number of arrangements one can make from n items
+and r selected at a time. (TSRS)
+
+Ans.#include<iostream>
+using namespace std;
+int fact(int i) {
+	int fact=1;
+	for(int j=i; j>=1; j--) {
+		fact=fact*j;
+
+	}
+	return fact;
+}
+int arrangement(int n,int r) {
+	int arran=fact(n)/fact(n-r);
+	return arran;
+}
+
+int main() {
+	int n,r;
+	cout<<"Enter total number of items: ";
+	cin>>n;
+	cout<<"enter no of selected items: ";
+	cin>>r;
+	cout<<"Total number of Arrangements: "<<arrangement(n,r);
+}
+
+
+9. Write a function to check whether a given number contains a given digit or not.
+(TSRS)
+
+Ans.#include<iostream>
+using namespace std;
+int check(int number,int n) {
+	int mod;
+	do {
+		mod=number%10;
+		number/=10;
+		if(mod==n) {
+			return 1;
+			break;
+		}
+	} while(number!=0);
+
+	if(mod!=n){return 0;
+	}
+}
+
+int main() {
+	int number,n;
+	cout<<"Enter Number: ";
+	cin>>number;
+	cout<<"Enter Digit To Check: ";
+	cin>>n;
+	cout<<check(number,n);;
+	return 0;
+}
+
+
+10. Write a function to print all prime factors of a given number. For example, if the
+number is 36 then your result should be 2, 2, 3, 3. (TSRN)
+
+Ans.#include<iostream>
+using namespace std;
+void factors(int);
+int main() {
+	int number;
+	cin>>number;
+	factors(number);
+	return 0;
+}
+
+void factors(int number) {
+	for(int i=2; i<=number; i++) {
+		if(number%i==0) {
+			cout<<i<<endl;
+			number/=i;
+			i=1;
+		}
+	}
+}
